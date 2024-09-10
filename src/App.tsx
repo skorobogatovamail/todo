@@ -1,10 +1,16 @@
-import "./App.css"
-import { Counter } from "./features/counter/Counter"
-import { Quotes } from "./features/quotes/Quotes"
-import logo from "./logo.svg"
+import { Container, Grid, Grid2, Typography } from "@mui/material"
+import { InProgressColumn } from "./components/InProgress"
 
 const App = () => {
-  return <div className="App"></div>
+  return (
+    <Container>
+      <Typography variant="h3" textAlign={"center"} mt={3} mb={5}>
+        To Do App with Redux
+      </Typography>
+
+      <InProgressColumn />
+    </Container>
+  )
 }
 
 export default App

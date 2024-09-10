@@ -2,8 +2,8 @@ import React from "react"
 import { createRoot } from "react-dom/client"
 import { Provider } from "react-redux"
 import App from "./App"
-import { store } from "./app/store"
-import "./index.css"
+import { store } from "./redux/store/index"
+import { CssBaseline } from "@mui/material"
 
 const container = document.getElementById("root")
 
@@ -13,7 +13,9 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <CssBaseline>
+          <App />
+        </CssBaseline>
       </Provider>
     </React.StrictMode>,
   )

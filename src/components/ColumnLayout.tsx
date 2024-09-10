@@ -9,9 +9,10 @@ import {
   TextField,
 } from "@mui/material"
 import { useState } from "react"
+import { ISliceState } from "../types"
 
 interface IColumnLayoutProps {
-  selectorState: []
+  selectorState: ISliceState
 }
 
 const ColumnLayout: React.FC<IColumnLayoutProps> = ({ selectorState }) => {
@@ -30,7 +31,7 @@ const ColumnLayout: React.FC<IColumnLayoutProps> = ({ selectorState }) => {
       <Box>
         <Button>Add Item</Button>
         <List>
-          {/* {selectorState.map(({ text }) => {
+          {selectorState.tasks.map(({ text }) => {
             return (
               <ListItem>
                 <ListItemText>
@@ -38,7 +39,7 @@ const ColumnLayout: React.FC<IColumnLayoutProps> = ({ selectorState }) => {
                 </ListItemText>
               </ListItem>
             )
-          })} */}
+          })}
         </List>
       </Box>
     </Box>

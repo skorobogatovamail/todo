@@ -1,9 +1,15 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { IModel, ISliceState } from "../../types"
 
+const initTasks = [
+  { id: 1, text: "Feed the cat" },
+  { id: 2, text: "Water the plants" },
+  { id: 3, text: "Wash the dishes" },
+] as IModel[]
+
 const initialState: ISliceState = {
-  tasks: [],
-  count: 0,
+  tasks: initTasks,
+  count: initTasks.length,
 }
 
 export const todoSlice = createSlice({
@@ -12,10 +18,12 @@ export const todoSlice = createSlice({
   reducers: {
     add: (state, action: PayloadAction<IModel>) => {
       state.tasks.push(action.payload)
+      state.count += 1
     },
     remove: (state, action: PayloadAction<number>) => {
       const idx = state.tasks.findIndex(el => el.id === action.payload)
       state.tasks.splice(idx, 1)
+      state.count -= 1
     },
   },
 })

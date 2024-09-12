@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { IModel, ISliceState } from "../types"
+import { IModel, ISliceState } from "../../types"
 
 const initialState: ISliceState = {
   tasks: [],
@@ -7,7 +7,7 @@ const initialState: ISliceState = {
 }
 
 export const todoSlice = createSlice({
-  name: "inProgress",
+  name: "todo",
   initialState,
   reducers: {
     add: (state, action: PayloadAction<IModel>) => {

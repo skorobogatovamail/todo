@@ -3,18 +3,15 @@ import { IModel, ISliceState } from "../types"
 
 const initialState: ISliceState = {
   tasks: [],
+  count: 0,
 }
 
-export const inProgressSlice = createSlice({
+export const todoSlice = createSlice({
   name: "inProgress",
   initialState,
   reducers: {
     add: (state, action: PayloadAction<IModel>) => {
       state.tasks.push(action.payload)
-    },
-    update: (state, action: PayloadAction<IModel>) => {
-      const idx = state.tasks.findIndex(el => el.id === action.payload.id)
-      state.tasks.splice(idx, 1, action.payload)
     },
     remove: (state, action: PayloadAction<number>) => {
       const idx = state.tasks.findIndex(el => el.id === action.payload)
@@ -23,5 +20,5 @@ export const inProgressSlice = createSlice({
   },
 })
 
-export const { add, update, remove } = inProgressSlice.actions
-export default inProgressSlice.reducer
+export const { add, remove } = todoSlice.actions
+export default todoSlice.reducer

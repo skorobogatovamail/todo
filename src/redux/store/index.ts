@@ -1,9 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit"
-import inProgressReducer from "../../slice/inProgress"
+import sliceReducer from "../../slice/slice"
 
 export const store = configureStore({
   reducer: {
-    inProgress: inProgressReducer,
+    todo: sliceReducer,
   },
 })
 
